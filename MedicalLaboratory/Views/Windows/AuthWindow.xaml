@@ -1,0 +1,29 @@
+﻿<Window x:Class="MedicalLaboratory.Views.Windows.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalLaboratory.Views.Windows"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Авторизация" Height="450" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Авторизация" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center">
+            <TextBlock Text="Логин"  FontSize="20" HorizontalAlignment="Center" Margin="5"></TextBlock>
+            <TextBox Name="txtLogin"></TextBox>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center">
+            <TextBlock Text="Пароль"  FontSize="20" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Name="txtBoxPassword"  Visibility="Collapsed"/>
+            <PasswordBox Name="txtPassword" Width="175" Height="30" Margin="5" VerticalContentAlignment="Center"></PasswordBox>
+            <CheckBox Name="checkBoxPassword" Margin="5,0,0,0" Content="Показать пароль" Click="checkBoxPassword_Click"/>
+        </StackPanel>
+        <Button Content="Войти" Grid.Row="4" Name="btnEnter" Click="btnEnter_Click"></Button>
+    </Grid>
+</Window>

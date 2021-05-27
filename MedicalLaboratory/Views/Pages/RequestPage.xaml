@@ -1,0 +1,47 @@
+﻿<Page x:Class="MedicalLaboratory.Views.Pages.RequestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MedicalLaboratory.Views.Pages"
+      mc:Ignorable="d"  WindowTitle="Заявки" 
+      d:DesignHeight="450" d:DesignWidth="800" Loaded="Page_Loaded"
+      Title="RequestPage" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Поиск:" VerticalAlignment="Center" Margin="5"></TextBlock>
+            <TextBox x:Name="txtBoxSearch" TextChanged="txtBoxSearch_TextChanged" Margin="20,0,0,0"></TextBox>
+        </StackPanel>
+        <DataGrid x:Name="dGridRequest" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Width="auto" Binding="{Binding Id}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Width="auto" Binding="{Binding DateOfCreation, StringFormat=dd.MM.yyyy}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Клиент" Width="auto" Binding="{Binding ClientInfo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Сотрудник" Width="auto" Binding="{Binding UserInfo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Услуги" Width="*" Binding="{Binding Services}">
+                        <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Сумма" Width="auto" Binding="{Binding Summ, StringFormat=C, ConverterCulture=ru}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="190">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEdit" Content="Редактировать" Click="btnEdit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="2" Content="Добавить" HorizontalAlignment="Left" Name="btnAdd" Click="btnAdd_Click"></Button>
+        <Button Grid.Row="2" Content="Удалить" HorizontalAlignment="Right" Name="btnDelete" Click="btnDelete_Click"></Button>
+    </Grid>
+</Page>

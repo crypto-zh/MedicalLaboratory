@@ -1,0 +1,59 @@
+﻿<Page x:Class="MedicalLaboratory.Views.Pages.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MedicalLaboratory.Views.Pages"
+      mc:Ignorable="d" Loaded="Page_Loaded"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployeesPage" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Поиск:" VerticalAlignment="Center" Margin="5"></TextBlock>
+            <TextBox x:Name="txtBoxSearch" TextChanged="txtBoxSearch_TextChanged" Margin="20,0,0,0"></TextBox>
+        </StackPanel>
+        <DataGrid x:Name="dGridEmployees" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Width="auto" Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Width="auto" Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Width="auto" Binding="{Binding Patronymic}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Телефон" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Phone}" ToolTip="{Binding Phone}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Почта" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Email}" ToolTip="{Binding Email}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Должность" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Post.Title}" ToolTip="{Binding Post.Title}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEdit" Content="Редактировать" Click="btnEdit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="2" Content="Добавить" HorizontalAlignment="Left" Name="btnAdd" Click="btnAdd_Click"></Button>
+        <Button Grid.Row="2" Content="Удалить" HorizontalAlignment="Right" Name="btnDelete" Click="btnDelete_Click"></Button>
+    </Grid>
+</Page>

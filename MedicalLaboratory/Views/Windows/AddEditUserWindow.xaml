@@ -1,0 +1,26 @@
+﻿<Window x:Class="MedicalLaboratory.Views.Windows.AddEditUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalLaboratory.Views.Windows"
+        mc:Ignorable="d"
+        Title="AddEditUserWindow" Height="300" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Логин" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Text="{Binding Login}" Grid.Column="1"></TextBox>
+        <TextBlock Text="Сотрудник" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <ComboBox Name="comboEmployee" Width="175" Height="30" Grid.Column="1" Grid.Row="1"></ComboBox>
+        <Button IsEnabled="False" Grid.Row="2" Content="Сбросить пароль" Name="btnResetPassword" Click="btnResetPassword_Click"></Button>
+        <Button Grid.Row="2" Content="Сохранить" Grid.Column="1" Name="btnSave" Click="btnSave_Click"></Button>
+    </Grid>
+</Window>

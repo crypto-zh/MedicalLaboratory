@@ -1,0 +1,42 @@
+﻿<Page x:Class="MedicalLaboratory.Views.Pages.ReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Loaded="Page_Loaded"
+      Title="ReportPage" IsVisibleChanged="Page_IsVisibleChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="от" VerticalAlignment="Center" Margin="5"></TextBlock>
+            <DatePicker  Name="datePickerFrom" Margin="5" Width="175" Background="White" Height="40"></DatePicker>
+            <TextBlock Text="до" VerticalAlignment="Center" Margin="5"></TextBlock>
+            <DatePicker  Name="datePickerUntill" Margin="5" Width="175" Background="White" Height="40"></DatePicker>
+            <Button Content="Применить" Name="btnAccept" Click="btnAccept_Click"></Button>
+        </StackPanel>
+        
+        <DataGrid x:Name="dGridRequest" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Width="auto" Binding="{Binding Id}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Width="auto" Binding="{Binding DateOfCreation, StringFormat=dd.MM.yyyy}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Клиент" Width="auto" Binding="{Binding ClientInfo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Сотрудник" Width="auto" Binding="{Binding UserInfo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Услуги" Width="*" Binding="{Binding Services}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Сумма" Width="auto" Binding="{Binding Summ, StringFormat=C, ConverterCulture=ru}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Сохранить" Name="btnSave" Click="btnSave_Click" Grid.Row="2" HorizontalAlignment="Right"></Button>
+        <Button Content="Печать" Name="btnPrint" Click="btnPrint_Click" Grid.Row="2" HorizontalAlignment="Left"></Button>
+    </Grid>
+</Page>
