@@ -19,13 +19,13 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Название" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Text="{Binding Title}" Grid.Column="1"></TextBox>
+        <TextBox ToolTip="Введите название" Text="{Binding Title}" Grid.Column="1"></TextBox>
         <TextBlock Text="Срок выполнения (р.д.)" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <ComboBox Name="comboDays" Width="175" Height="30" Grid.Column="1" Grid.Row="1"></ComboBox>
+        <ComboBox ToolTip="Выберите срок выполнения в рабочих днях" Name="comboDays" Width="175" Height="30" Grid.Column="1" Grid.Row="1"></ComboBox>
         <TextBlock Text="Стоимость" Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Text="{Binding Cost}" Name="txtCost" PreviewTextInput="txtCost_PreviewTextInput" Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBox ToolTip="Введите стоимость" Text="{Binding Cost}" Name="txtCost" PreviewTextInput="txtCost_PreviewTextInput" Grid.Row="2" Grid.Column="1"></TextBox>
         <TextBlock Text="Описание" Grid.Row="3" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Text="{Binding Description}" MaxLines="3" Grid.Row="3" Grid.Column="1"></TextBox>
+        <TextBox ToolTip="Введите описание" Text="{Binding Description}" MaxLines="3" Grid.Row="3" Grid.Column="1"></TextBox>
         <Button Grid.Row="4" Content="Сохранить" Grid.ColumnSpan="2" Name="btnSave" Click="btnSave_Click"></Button>
     </Grid>
 </Window>

@@ -156,6 +156,13 @@ namespace MedicalLaboratory.Views.Windows
                     currentRequest.DateOfCreation = DateTime.Now;
                     currentRequest.UserId = Settings.Default.userId;
                     MedicalLaboratoryEntities.getContext().Request.Add(currentRequest);
+                    for (int i = 0; i < listServices.SelectedItems.Count; i++)
+                    {
+                        RequestServices requestServices = new RequestServices();
+                        requestServices.RequestId = currentRequest.Id;
+                        requestServices.ServiceId = listData.FirstOrDefault(p => p.Value == listServices.SelectedItems[i].ToString()).Key;
+                        currentRequest.RequestServices.Add(requestServices);
+                    }
                 }
                 MedicalLaboratoryEntities.getContext().SaveChanges();
                 MessageBox.Show("Данные сохранены", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);

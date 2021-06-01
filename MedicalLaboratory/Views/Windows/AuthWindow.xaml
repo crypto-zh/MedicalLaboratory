@@ -16,12 +16,12 @@
         <TextBlock Text="Авторизация" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center">
             <TextBlock Text="Логин"  FontSize="20" HorizontalAlignment="Center" Margin="5"></TextBlock>
-            <TextBox Name="txtLogin"></TextBox>
+            <TextBox Name="txtLogin" ToolTip="Введите логин"></TextBox>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center">
             <TextBlock Text="Пароль"  FontSize="20" HorizontalAlignment="Center"></TextBlock>
-            <TextBox Name="txtBoxPassword"  Visibility="Collapsed"/>
-            <PasswordBox Name="txtPassword" Width="175" Height="30" Margin="5" VerticalContentAlignment="Center"></PasswordBox>
+            <TextBox Name="txtBoxPassword"  Visibility="Collapsed" ToolTip="Введите пароль"/>
+            <PasswordBox Name="txtPassword" Width="175" Height="30" Margin="5" VerticalContentAlignment="Center" ToolTip="Введите пароль"></PasswordBox>
             <CheckBox Name="checkBoxPassword" Margin="5,0,0,0" Content="Показать пароль" Click="checkBoxPassword_Click"/>
         </StackPanel>
         <Button Content="Войти" Grid.Row="4" Name="btnEnter" Click="btnEnter_Click"></Button>

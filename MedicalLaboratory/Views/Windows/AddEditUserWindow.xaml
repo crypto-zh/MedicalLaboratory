@@ -17,9 +17,9 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Логин" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Text="{Binding Login}" Grid.Column="1"></TextBox>
+        <TextBox Text="{Binding Login}" Grid.Column="1" ToolTip="Введите логин"></TextBox>
         <TextBlock Text="Сотрудник" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <ComboBox Name="comboEmployee" Width="175" Height="30" Grid.Column="1" Grid.Row="1"></ComboBox>
+        <ComboBox ToolTip="Выберите сотрудника" Name="comboEmployee" Width="175" Height="30" Grid.Column="1" Grid.Row="1"></ComboBox>
         <Button IsEnabled="False" Grid.Row="2" Content="Сбросить пароль" Name="btnResetPassword" Click="btnResetPassword_Click"></Button>
         <Button Grid.Row="2" Content="Сохранить" Grid.Column="1" Name="btnSave" Click="btnSave_Click"></Button>
     </Grid>
