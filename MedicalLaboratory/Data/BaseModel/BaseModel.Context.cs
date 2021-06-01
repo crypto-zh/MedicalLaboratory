@@ -41,7 +41,6 @@ namespace MedicalLaboratory.Data.BaseModel
         public virtual DbSet<RequestServices> RequestServices { get; set; }
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<TEST> TEST { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<RequestWithServices> RequestWithServices { get; set; }
     }

@@ -172,9 +172,6 @@
     <Compile Include="Data\BaseModel\sysdiagrams.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\BaseModel\TEST.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\BaseModel\User.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
