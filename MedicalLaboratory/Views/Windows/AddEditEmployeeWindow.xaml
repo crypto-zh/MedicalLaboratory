@@ -22,17 +22,17 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Фамилия" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Text="{Binding LastName}" Grid.Column="1"></TextBox>
+        <TextBox ToolTip="Введите фамилию" Text="{Binding LastName}" Grid.Column="1"></TextBox>
         <TextBlock Text="Имя" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Text="{Binding FirstName}" Width="175" Height="30" Grid.Column="1" Grid.Row="1"></TextBox>
+        <TextBox ToolTip="Введите имя" Text="{Binding FirstName}" Width="175" Height="30" Grid.Column="1" Grid.Row="1"></TextBox>
         <TextBlock Text="Отчество" Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Text="{Binding Patronymic}" Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBox ToolTip="Введите отчество" Text="{Binding Patronymic}" Grid.Row="2" Grid.Column="1"></TextBox>
         <TextBlock Text="Телефон" Grid.Row="3" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <mask:MaskedTextBox x:Name="txtPhone" Width="175" Height="30" Mask="+7 (000) 000-00-00" Text="{Binding Phone}" VerticalContentAlignment="Center"  Grid.Row="3" Grid.Column="1"></mask:MaskedTextBox>
+        <mask:MaskedTextBox ToolTip="Введите номер телефона" x:Name="txtPhone" Width="175" Height="30" Mask="+7 (000) 000-00-00" Text="{Binding Phone}" VerticalContentAlignment="Center"  Grid.Row="3" Grid.Column="1"></mask:MaskedTextBox>
         <TextBlock Text="Почта" Grid.Row="4" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Text="{Binding Email}" Grid.Row="4" Grid.Column="1"></TextBox>
+        <TextBox ToolTip="Введите почту" Text="{Binding Email}" Grid.Row="4" Grid.Column="1"></TextBox>
         <TextBlock Text="Должность" Grid.Row="5" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <ComboBox Width="175" Height="30" VerticalAlignment="Center"  SelectedItem="{Binding Post}" DisplayMemberPath="Title" Grid.Row="5" x:Name="comboPost" Grid.Column="1"></ComboBox>
+        <ComboBox ToolTip="Выберите должность" Width="175" Height="30" VerticalAlignment="Center"  SelectedItem="{Binding Post}" DisplayMemberPath="Title" Grid.Row="5" x:Name="comboPost" Grid.Column="1"></ComboBox>
         <Button Grid.Row="6" Content="Сохранить" Grid.ColumnSpan="2" Name="btnSave" Click="btnSave_Click"></Button>
     </Grid>
 </Window>

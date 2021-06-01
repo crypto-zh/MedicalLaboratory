@@ -23,7 +23,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <ComboBox  Name="comboClient" IsEditable="True" Grid.Row="0" Width="175" Height="30"></ComboBox>
+            <ComboBox ToolTip="Выберите клиента"  Name="comboClient" IsEditable="True" Grid.Row="0" Width="175" Height="30"></ComboBox>
             <Button Content="Добавить нового клиента" Name="btnAddClient" Click="btnAddClient_Click" Grid.Row="1"></Button>
         </Grid>
 

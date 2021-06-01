@@ -21,7 +21,7 @@ namespace MedicalLaboratory.Views.Pages
             try
             {
                 MedicalLaboratoryEntities.getContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                dGridRequest.ItemsSource = MedicalLaboratoryEntities.getContext().RequestWithServices.ToList();                
+                dGridRequest.ItemsSource = MedicalLaboratoryEntities.getContext().RequestWithServices.OrderByDescending(p=>p.DateOfCreation).ToList();                
             }
             catch
             {
@@ -45,7 +45,7 @@ namespace MedicalLaboratory.Views.Pages
                         MedicalLaboratoryEntities.getContext().SaveChanges();
                         MedicalLaboratoryEntities.getContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                         MessageBox.Show("Данные удалены!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                        dGridRequest.ItemsSource = MedicalLaboratoryEntities.getContext().RequestWithServices.ToList();
+                        dGridRequest.ItemsSource = MedicalLaboratoryEntities.getContext().RequestWithServices.OrderByDescending(p => p.DateOfCreation).ToList();
                     }
                     catch
                     {
@@ -97,7 +97,7 @@ namespace MedicalLaboratory.Views.Pages
                 try
                 {
                     dGridRequest.ItemsSource = MedicalLaboratoryEntities.getContext().RequestWithServices.Where(p => p.ClientInfo.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower()) ||
-                         p.DateOfCreation.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower()) || p.Services.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower()) || p.UserInfo.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower()) || p.Id.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower())).ToList();
+                         p.DateOfCreation.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower()) || p.Services.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower()) || p.UserInfo.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower()) || p.Id.ToString().ToLower().Contains(txtBoxSearch.Text.ToLower())).OrderByDescending(p => p.DateOfCreation).ToList();
                 }
                 catch
                 {
