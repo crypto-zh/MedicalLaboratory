@@ -14,4 +14,4 @@
 https://drive.google.com/file/d/1QojUBGI2p2S27Y8oAO9SYDybRM0qwO5X/view?usp=sharing 
 
 # Авторы
-Журавко Даниил, группа 632-Д9-3ИСП
+## Журавко Даниил, группа 632-Д9-3ИСП
